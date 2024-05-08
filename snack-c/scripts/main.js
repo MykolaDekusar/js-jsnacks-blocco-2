@@ -3,31 +3,25 @@
 const array = [];
 const useArray = [];
 const contatore = contatoreArray();
-const contatore2 = contatoreArrayUpd(contatore);
 //richiamo la funzione che ha eliminato l'esci
-console.log(contatore2);
-console.log(stampa(contatore2, useArray));
+console.log(contatore);
+console.log(stampa(contatore, useArray));
 
 //ciclo gli elementi che l'utente vuole inserire e all'esci esce
 function contatoreArray() {
     let contatore = 0;
+    let contatore2 = 0;
     while (array[contatore - 1] !== 'esci') {
         array[contatore] = prompt("Inserisci dati");
         contatore++;
     }
-    return contatore;
-}
-
-//rimuovo l'esci al fondo dell'array
-function contatoreArrayUpd(contatore) {
-    let contatore2 = 0;
+    //rimuovo l'esci al fondo dell'array
     for (let i = 0; i < contatore; i++) {
         if (array[i] !== 'esci') {
             useArray[i] = array[i];
             contatore2++;
         }
     }
-    console.log(useArray);
     if (!(contatore2 === 0)) return contatore2;
     //se è vuoto restituisco falso
     return false;

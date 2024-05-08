@@ -6,7 +6,6 @@ const array = [];
 const useArray = [];
 const elementoInput = [prompt("Inserisci cosa mettere all'inizio")];
 const contatore = contatoreArray();
-const contatore2 = contatoreArrayUpd(contatore);
 
 //richiamo la funzione che ha eliminato l'esci
 console.log(inserisciInTesta(elementoInput, useArray));
@@ -14,15 +13,12 @@ console.log(inserisciInTesta(elementoInput, useArray));
 //ciclo gli elementi che l'utente vuole inserire e all'esci esce
 function contatoreArray() {
     let contatore = 0;
+    let contatore2 = 0;
     while (array[contatore - 1] !== 'esci') {
         array[contatore] = prompt("Inserisci dati");
         contatore++;
     }
-    return contatore;
-}
-//rimuovo l'esci al fondo dell'array
-function contatoreArrayUpd(contatore) {
-    let contatore2 = 0;
+    //rimuovo l'esci al fondo dell'array
     for (let i = 0; i < contatore; i++) {
         if (array[i] !== 'esci') {
             useArray[i] = array[i];
@@ -33,9 +29,10 @@ function contatoreArrayUpd(contatore) {
     //se è vuoto restituisco falso
     return false;
 }
+
 //FUNZIONE INSERISCI IN TESTA 
 function inserisciInTesta(elementoInput, array) {
-    for (let i = 0; i < contatore2; i++) {
+    for (let i = 0; i < contatore; i++) {
         elementoInput[i + 1] = array[i];
     }
     return elementoInput;
