@@ -33,6 +33,7 @@ function contatoreArray() {
 //FUNZIONE INSERISCI IN TESTA 
 function inserisciInTesta(elementoInput, array) {
     for (let i = 0; i < contatore; i++) {
+        //aggiungo gli elementi array dalla posizione 1
         elementoInput[i + 1] = array[i];
     }
     return elementoInput;

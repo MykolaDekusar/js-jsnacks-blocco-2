@@ -29,18 +29,15 @@ function contatoreArray() {
 //funzione di stampa
 function stampa(lunghezzaArray, array) {
     let stringaArrayBrutta = '';
-    let stringaArrayBella = '';
     let i = 0;
-    let contatore = 0;
     while (i < lunghezzaArray) {
-        stringaArrayBrutta += `${array[i]},`;
+        if (i === 0) {
+            stringaArrayBrutta += `${array[i]}`;
+        } else {
+            stringaArrayBrutta += `,${array[i]}`;
+        }
+
         i++;
     }
-    while (stringaArrayBrutta[contatore] !== undefined) {
-        contatore++;
-    }
-    for (let i = 0; i < contatore - 1; i++) {
-        stringaArrayBella += stringaArrayBrutta[i];
-    }
-    return stringaArrayBella;
+    return stringaArrayBrutta;
 }
