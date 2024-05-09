@@ -4,7 +4,7 @@ const arrayClean = [];
 const contatore = contatoreArray();
 //richiamo la funzione che ha eliminato l'esci
 console.log(contatore);
-console.log(stampa());
+console.log(stampa(arrayClean, contatore));
 
 //ciclo gli elementi che l'utente vuole inserire e all'esci esce
 function contatoreArray() {
@@ -27,7 +27,7 @@ function contatoreArray() {
     return false;
 }
 //funzione di stampa
-function stampa() {
+function stampa(arrayClean, contatore) {
     let stringaArray = '';
     let i = 0;
     while (i < contatore) {

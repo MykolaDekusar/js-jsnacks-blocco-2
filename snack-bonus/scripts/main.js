@@ -6,7 +6,7 @@ const arrayClean = [];
 const elementoInput = [prompt("Inserisci cosa mettere all'inizio")];
 const contatore = contatoreArray();
 //richiamo la funzione 
-console.log(inserisciInTesta());
+console.log(inserisciInTesta(contatore, arrayClean));
 
 //ciclo gli elementi che l'utente vuole inserire e all'esci esce
 function contatoreArray() {
@@ -30,7 +30,7 @@ function contatoreArray() {
 }
 
 //FUNZIONE INSERISCI IN TESTA 
-function inserisciInTesta() {
+function inserisciInTesta(contatore, arrayClean) {
     for (let i = 0; i < contatore; i++) {
         //aggiungo gli elementi array dalla posizione 1
         elementoInput[i + 1] = arrayClean[i];

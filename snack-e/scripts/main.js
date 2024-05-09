@@ -2,13 +2,13 @@
 // snack-e
 // scrivere una funzione rimuoviDallaTesta() che, dato un array A in input, restituisca un nuovo array B, con tutti gli elementi dell'array A, tranne quello in prima posizione
 const useArray = [];
-const contatore = contatoreArray();
+const contatore = contatoreArray(useArray);
 //richiamo la funzione che ha eliminato l'esci
 console.log(contatore);
-console.log(rimuoviDallaTesta());
+console.log(rimuoviDallaTesta(contatore, useArray));
 
 //ciclo gli elementi che l'utente vuole inserire e all'esci esce
-function contatoreArray() {
+function contatoreArray(useArray) {
     const array = [];
     let contatore = 0;
     do {
@@ -29,10 +29,10 @@ function contatoreArray() {
 }
 
 //FUNZIONE RIMUOVI DALLA TESTA
-function rimuoviDallaTesta() {
+function rimuoviDallaTesta(contatore, useArray) {
     const arrayTagliato = [];
-    for (let i = 0; i < contatore - 1; i++) {
-        arrayTagliato[i] = useArray[i + 1];
+    for (let i = 1; i < contatore; i++) {
+        arrayTagliato[i - 1] = useArray[i];
     }
     return arrayTagliato;
 }

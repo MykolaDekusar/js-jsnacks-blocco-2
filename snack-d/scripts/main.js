@@ -5,7 +5,7 @@ const useArray = [];
 const contatore = contatoreArray();
 //richiamo la funzione che ha eliminato l'esci
 console.log(contatore);
-console.log(rimuoviDallaCoda());
+console.log(rimuoviDallaCoda(contatore, useArray));
 
 //ciclo gli elementi che l'utente vuole inserire e all'esci esce
 function contatoreArray() {
@@ -29,7 +29,7 @@ function contatoreArray() {
 }
 
 //FUNZIONE RIMUOVI DALLA CODA 
-function rimuoviDallaCoda() {
+function rimuoviDallaCoda(contatore, useArray) {
     const arrayTagliato = [];
     for (let i = 0; i < contatore - 1; i++) {
         arrayTagliato[i] = useArray[i];
